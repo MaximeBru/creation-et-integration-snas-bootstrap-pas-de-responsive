@@ -1,0 +1,55 @@
+.Error{
+  height: 45rem;
+     text-align:center;
+  margin:0;
+    top:25%;
+    background: white;
+    position: relative;
+}
+.Error h1{
+  color: #d83431;
+  margin-top: 2rem;
+}
+.Mechanics{
+
+}
+
+.svgPos{
+  position: absolute;
+  margin: 8% 43.5%;
+}
+
+
+.spinner{
+  margin: 3% 40%;
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  
+  border: solid 0.4px #d83431;
+  
+  transition: all ease 0.3s;
+  
+  animation: spin 3s linear infinite;
+}
+
+@keyframes spin{
+  0%{
+    transform: rotate(0deg);
+    box-shadow: -3px 3px 3px #d83431, inset 3px -3px 3px #d83431;  
+  }
+  
+  33%{
+    transform: rotate(120deg);
+    box-shadow: -3px 3px 6px #d83431, inset 3px -3px 5px #d83431
+  }
+  
+  66%{
+    transform: rotate(240deg);
+    box-shadow: -3px 3px 3px #d83431, inset 3px -3px 3px #d83431;
+  }
+   100%{
+    transform: rotate(360deg);
+    box-shadow: -3px 3px 3px #d83431, inset 3px -3px 3px #d83431;
+  }
+}

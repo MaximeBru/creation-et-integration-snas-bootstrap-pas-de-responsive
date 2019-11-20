@@ -1,0 +1,561 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vermeg Intranet</title>
+  <link rel="stylesheet" href="../css/foundation.css">
+  <!--   <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="../css/app.css">
+  <link rel="stylesheet" href="../css/error.css">
+</head>
+<body>
+  <header>
+
+    <section>
+      <img class="Logo" src="../images/Logo_VERMEG.svg">
+    </section>
+    <!--=================== Navigation==================== -->
+    <nav>
+      <ul class="dropdown menu" data-dropdown-menu id="primary-menu">
+
+        <li><a href="#">Home</a></li>
+        <li>
+          <a href="#">Career</a>
+          <ul class="menu">
+            <li><a href="#">Item 1A</a></li>
+            <li><a href="#">Item 1A</a></li>
+            <li><a href="#">Item 1A</a></li>
+            <li><a href="#">Item 1A</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Vermeg Academy</a></li>
+        <li><a href="#">Organisation Chart</a></li>
+        <li>
+          <a href="#">Information Security</a>
+          <ul class="menu">
+            <li><a href="#">Policies and Procedures</a></li>
+            <li><a href="#">Asset Registers</a></li>
+            <li><a href="#">Security News</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Awareness</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Video</a></li>
+      </ul>
+    </nav>
+    <!--=================== end of Navigation==================== -->
+
+    <br>
+  </header>
+  <main>
+    <section class="border">
+     <h1>Vermeg  Intranet</h1>
+     <div class="dynamicNews">
+      <div class="sticker"><strong><p>News</p></strong><div class="triangle"></div></div>
+      <div class="newsticker js-newsticker">
+        <ul class="js-frame">
+          <li class="js-item">Vermeg News Nouvelle intervew disponible'</li>
+          <li class="js-item">Mise en production event'</li>
+          <li class="js-item">Très heureuse nouvelle année à tous'.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <!--====================== 3 first sections================= -->
+  <table width="100%" cellpadding="0" cellspacing="0" border="0" class="display" id="example">
+<thead><th>Title</th><th>description</th></thead>
+</table>
+
+
+
+
+<input id="cmdGetCustomersList" type="button" value="Get Customers List" /></pre>
+<div id="results"></div>
+<pre>
+<script type="text/javascript"> 
+      jQuery(document).ready(function () {
+          $("#cmdGetCustomersList").show(onGetCustomersList);
+function onGetCustomersList() {
+    // nettoyage de la div de résultat
+    $("#results").empty();
+ 
+    // construction de la requite rest
+    var requestUri = _spPageContextInfo.webAbsoluteUrl +
+                     "/_api/Web/Lists/GetByTitle('Products')/Items" +
+                     "?$select=Title,description,Price";
+ 
+    // execution ajax de la requite rest
+    $.ajax({
+        type: "GET",
+        url: requestUri,
+        contentType: "application/json",
+        headers: { Accept: "application/json;odata=verbose" },
+        success: onListDataReturned,
+        error: onError
+    });
+}
+function onListDataReturned(data) {
+    $("#results").empty();
+    var odataResults = data.d.results;
+    var i = 0;
+    $("<h2>").html("description").appendTo("#results");
+    while (odataResults[i]) {
+        var resultats = "<li>" + odataResults[i].Title + " - " + odataResults[i].description+ "-" + odataResults[i].Price+ "</li>";
+        $("#results").append($("<ul>").append(resultats));
+        i++;
+    }
+}
+function onError(err) {
+    $("#results").text("ERROR: " + JSON.stringify(err));
+}
+      });
+      </script>
+      /*=============================test de d'insertion javascript=======================================*/
+<div id="cmdGetTopAnnonce" ></div>
+<div id="resultsTopAnnonce"></div>
+
+<script type="text/javascript">
+
+  jQuery(document).ready(function () {
+  $("#cmdGetTopAnnonce").show(onGetTopAnnonce);
+function onGetTopAnnonce() {
+  // nettoyage de la div de résultat
+/*  $("#resultsTopAnnonce").empty();*/
+
+  // construction de la requite rest
+  var requestUri = _spPageContextInfo.webAbsoluteUrl +
+  "/_api/Web/Lists/GetByTitle('AnnonceTop')/items?"+"?$select=Title";
+
+  // execution ajax de la requite rest
+  $.ajax({
+  type: "GET",
+  url: requestUri,
+  contentType: "application/json",
+  headers: { Accept: "application/json;odata=verbose" },
+  success: onListDataReturned,
+  error: onError
+  });
+}
+function onListDataReturned(data) {
+  /*$("#resultsTopAnnonce").empty();*/
+  var odataResults = data.d.results;
+  var i = 0;
+/*  $("<h2>").html("Title").appendTo("#resultsTopAnnonce");*/
+  while (odataResults[i]) {
+  var resultats = "<li class=\"js-item\">" + odataResults[i].Title + "</li>";
+  $("#resultsTopAnnonce").append(resultats);
+  i++;
+  }
+}
+function onError(err) {
+  $("#resultsTopAnnonce").text("ERROR: " + JSON.stringify(err));
+}
+  });
+</script>
+      /*=======================================fin==========================================*/
+
+
+<script type="text/javascript">
+
+function LoadZipCodes(state)
+{
+        var call = $.ajax({
+            url: _spPageContextInfo.webAbsoluteUrl + "/_api/Web/Lists/GetByTitle('Products')/items?"+
+"$select=Title,description &$top=5000",
+            type: "GET",
+            dataType: "json",
+            headers: {
+                Accept: "application/json;odata=verbose"
+            }
+       
+        });
+        call.done(function (data,textStatus, jqXHR){
+            $('#example').dataTable({
+                "bDestroy": true,
+                "bProcessing": true,
+                "aaData": data.d.results,
+                "aoColumns": [
+                    { "mData": "Title" },
+                    { "mData": "description" },
+                   /* { "mData": "Column3" }*/
+                ]
+              });
+        });
+        call.fail(function (jqXHR,textStatus,errorThrown){
+            alert("Error retrieving Tasks: " + jqXHR.responseText);
+        });
+}
+
+</script> -->
+ <section>
+  <div id="products">
+    
+  </div>
+   <script type="text/javascript">
+     
+   </script>
+ </section>
+ <div><button onclick=" queryListItems ()">Click here to Create a List</button></div>  
+  
+<div id="displayDiv"></div>  
+   <script type="text/javascript">  
+      //This example gets all the items in the Announcements list that have a title that begins with 'T'.  
+      //If your site doesn't include a list called Announcements you must make the changes indicated  
+  
+      //This variable will hold a reference to the Announcements list items collection  
+      var returnedItems = null;  
+  
+      //This function loads the list and runs the query asynchronously  
+      function queryListItems() {  
+         //Get the current context  
+         var context = new SP.ClientContext();  
+         //Get the Announcements list. Alter this code to match the name of your list  
+         var list = context.get_web().get_lists().getByTitle('Products');  
+         //Create a new CAML query  
+         var caml = new SP.CamlQuery();  
+         //Create the CAML that will return only items with the titles that begin with 'T'  
+         caml.set_viewXml("<View><Query><Where><BeginsWith><FieldRef Name='Title' /><Value Type='Text'>T</Value></BeginsWith>            </Where></Query></View>");  
+         //Specify the query and load the list oject  
+         returnedItems = list.getItems(caml);  
+         context.load(returnedItems);  
+         //Run the query asynchronously, passing the functions to call when a response arrives  
+         context.executeQueryAsync(onSucceededCallback, onFailedCallback);  
+      }  
+  
+      //This function fires when the query completes successfully  
+      function onSucceededCallback(sender, args) {  
+         //Get an enumerator for the items in the list  
+         var enumerator = returnedItems.getEnumerator();  
+         //Formulate HTML from the list items  
+         var markup = 'Items in the Announcements list that start with "T": <br><br>';  
+         //Loop through all the items  
+         while (enumerator.moveNext()) {  
+         var listItem = enumerator.get_current();  
+         markup += 'Item Title: ' + listItem.get_item('Title') + '<br>';  
+         markup += 'Item ID: ' + listItem.get_id() + '<br><br>';  
+      }  
+      //Display the formulated HTML in the displayDiv element  
+      displayDiv.innerHTML = markup;  
+   }  
+   //This function fires when the query fails  
+   function onFailedCallback(sender, args) {  
+      //Formulate HTML to display details of the error  
+      var markup = '<p>The request failed: <br>';  
+      markup += 'Message: ' + args.get_message() + '<br>';  
+      //Display the details  
+      displayDiv.innerHTML = markup;  
+   }  
+</script> 
+
+<div  id="cmdGetTopAnnonce">
+        <ul id="resultsTopAnnonce"> 
+
+        </ul>
+</div>
+
+<script type="text/javascript">
+
+  jQuery(document).ready(function () {
+  $("#cmdGetTopAnnonce").show(onGetTopAnnonce);
+function onGetTopAnnonce() {
+  // nettoyage de la div de résultat
+/*  $("#resultsTopAnnonce").empty();*/
+
+  // construction de la requite rest
+  var requestUri = _spPageContextInfo.webAbsoluteUrl +
+  "/_api/Web/Lists/GetByTitle('BusinessNews')/items?";
+
+  // execution ajax de la requite rest
+  $.ajax({
+  type: "GET",
+  url: requestUri,
+  contentType: "application/json",
+  headers: { Accept: "application/json;odata=verbose" },
+  success: onListDataReturned,
+  error: onError
+  });
+}
+function onListDataReturned(data) {
+  /*$("#resultsTopAnnonce").empty();*/
+  var odataResults = data.d.results;
+  var i = 0;
+/*  $("<h2>").html("Title").appendTo("#resultsTopAnnonce");*/
+  while (odataResults[i]) {
+  var resultats = "<li >" + odataResults[i].Title + odataResults[i].DateDay"</li>";
+  $("#resultsTopAnnonce").append(resultats);
+  i++;
+  }
+}
+function onError(err) {
+  $("#resultsTopAnnonce").text("ERROR: " + JSON.stringify(err));
+}
+  });
+</script>
+
+
+
+
+
+<!-- ======================test valide======================= -->
+<input id="cmdGetCustomersList" type="button" value="Get Customers List" /></pre>
+<div id="results"></div>
+<pre>
+<script type="text/javascript"> 
+      jQuery(document).ready(function () {
+          $("#cmdGetCustomersList").show(onGetCustomersList);
+function onGetCustomersList() {
+    // nettoyage de la div de résultat
+    $("#results").empty();
+ 
+    // construction de la requite rest
+    var requestUri = _spPageContextInfo.webAbsoluteUrl +
+                     "/_api/Web/Lists/GetByTitle('Products')/Items" +
+                     "?$select=Title,description,Price";
+ 
+    // execution ajax de la requite rest
+    $.ajax({
+        type: "GET",
+        url: requestUri,
+        contentType: "application/json",
+        headers: { Accept: "application/json;odata=verbose" },
+        success: onListDataReturned,
+        error: onError
+    });
+}
+function onListDataReturned(data) {
+    $("#results").empty();
+    var odataResults = data.d.results;
+    var i = 0;
+    $("<h2>").html("description").appendTo("#results");
+    while (odataResults[i]) {
+        var resultats = "<li>" + odataResults[i].Title + " - " + odataResults[i].description+ "-" + odataResults[i].Price+ "</li>";
+        $("#results").append($("<ul>").append(resultats));
+        i++;
+    }
+}
+function onError(err) {
+    $("#results").text("ERROR: " + JSON.stringify(err));
+}
+      });
+
+
+console.log("je suis ici")
+      </script>
+<input id="cmdTopAnnonceList" type="button" value="Top Annonce List" /></pre>
+<div id="resultsTopAnnonce"></div>
+<pre>
+<script type="text/javascript"> 
+      jQuery(document).ready(function () {
+          $("#cmdTopAnnonceList").show(onTopAnnonceList);
+function onGetCustomersList() {
+    // nettoyage de la div de résultat
+    $("#resultsTopAnnonce").empty();
+ 
+    // construction de la requite rest
+    var requestUri = _spPageContextInfo.webAbsoluteUrl +
+                     "/_api/Web/Lists/GetByTitle('AnnonceTop')/items?"+%20"?$select=Title,Body";
+ 
+    // execution ajax de la requite rest
+    $.ajax({
+        type: "GET",
+        url: requestUri,
+        contentType: "application/json",
+        headers: { Accept: "application/json;odata=verbose" },
+        success: onListDataReturned,
+        error: onError
+    });
+}
+function onListDataReturned(data) {
+    $("#resultsTopAnnonce").empty();
+    var odataResults = data.d.results;
+    var i = 0;
+    $("<h2>").html("description").appendTo("#resultsTopAnnonce");
+    while (odataResults[i]) {
+        var resultats = "<li>" + odataResults[i].Title + " - " + odataResults[i].Body+ "</li>";
+        $("#resultsTopAnnonce").append($("<ul>").append(resultats));
+        i++;
+    }
+}
+function onError(err) {
+    $("#resultsTopAnnonce").text("ERROR: " + JSON.stringify(err));
+}
+      });
+</script>
+
+<!--============================= connection Bibliothéque de documents================ -->
+<section id="cmdGetCorporateNewsList">
+  <div id="cmdGetCorporateNewsList" >
+  <div id="resultsCorporateNews"></div>
+  </div>
+</section>
+
+<pre>
+<script type="text/javascript"> 
+      jQuery(document).ready(function () {
+          $("#cmdGetCorporateNewsList").show(onGetCorporateNewsList);
+function onGetCorporateNewsList() {
+    // nettoyage de la div de résultat
+    $("#resultsCorporateNews").empty();
+ 
+    // construction de la requite rest
+    var requestUri = _spPageContextInfo.webAbsoluteUrl +
+                     "/_api/Web/Lists/GetByTitle('Products')/items?"+"$select=Title";
+ 
+    // execution ajax de la requite rest
+    $.ajax({
+        type: "GET",
+        url: requestUri,
+        contentType: "application/json",
+        headers: { Accept: "application/json;odata=verbose" },
+        success: onListDataReturned,
+        error: onError
+    });
+}
+function onListDataReturned(data) {
+  /*  $("#resultsCorporateNews").empty();*/
+  console.log(data);
+    var odataResults = data.d.results;
+    var i = 0;
+    /*$("<h2>").html("description").appendTo("#resultsCorporateNews");*/
+
+    alert(odataResults[i]);
+    while (odataResults[i]) {
+        var resultats =  "<a href=\"#\"><div class=\"articleimg\"><h3><strong></strong> <br>" "</h3></div><div class=\"contentpart\"><h3>" + odataResults[i].Title + "</h3><cite></cite><p>""</p></div></a>";
+        $("#resultsCorporateNews").append($("<article>").append(resultats));
+        i++;
+    }
+}
+function onError(err) {
+    $("#resultsCorporateNews").text("ERROR: " + JSON.stringify(err));
+}
+      });
+
+      </script>
+
+      <!-- :::::::::::::==================================real bibliview==================================== -->
+      <div id="cmdGetBusinessNewsList">
+        <div id="resultsBusinessNews"></div>
+<script type="text/javascript"> 
+      jQuery(document).ready(function () {
+          $("#cmdGetBusinessNewsList").show(onGetBusinessNewsList);
+function onGetBusinessNewsList() {
+    // nettoyage de la div de résultat
+    $("#resultsBusinessNews").empty();
+ 
+    // construction de la requite rest
+    var requestUri = _spPageContextInfo.webAbsoluteUrl +
+                     "/_api/Web/Lists/GetByTitle('Documents')/Items" +
+                     "?$select=Title,DateDoc,ServerRedirectedEmbedUrl,Description0";
+ 
+    // execution ajax de la requite rest
+    $.ajax({
+        type: "GET",
+        url: requestUri,
+        contentType: "application/json",
+        headers: { Accept: "application/json;odata=verbose" },
+        success: onListDataReturned,
+        error: onError
+    });
+}
+function onListDataReturned(data) {
+    $("#resultsBusinessNews").empty();
+    var odataResults = data.d.results;
+    var i = 0;
+    /*$("<h2>").html("description").appendTo("#resultsBusinessNews");*/
+    while (odataResults[i]) {
+        var resultats = "<a href=\"" + odataResults[i].ServerRedirectedEmbedUrl+"\"><div class=\"DocImg\"><img src=\"/sites/Rework-Intranet/_catalogs/masterpage/vermeg_intranet/images/doc.svg\"></div><div class=\"DocPart\"><h3>"+ odataResults[i].Title+"</h3><p>" + odataResults[i].Description0+"</p><cite class=\"CiteDoc\">"+odataResults[i].DateDoc+"</cite></div></a>";
+        $("#resultsBusinessNews").append($("<article class=\"Docs\">").append(resultats));
+        i++;
+    }
+}
+function onError(err) {
+    $("#resultsBusinessNews").text("ERROR: " + JSON.stringify(err));
+}
+      });
+
+      </script>
+<!-- ======================================================================================desrnier test============ -->
+<div id="cmdGetCSRSlideList">
+        <div id="resultsCSRSlide"></div>
+
+<script type="text/javascript"> 
+      jQuery(document).ready(function () {
+          $("#cmdGetCSRSlideList").show(onGetCSRSlideList);
+function onGetCSRSlideList() {
+    // nettoyage de la div de résultat
+    $("#resultsCSRSlide").empty();
+ 
+    // construction de la requite rest
+    var requestUri = _spPageContextInfo.webAbsoluteUrl +
+                     "/_api/Web/Lists/getByTitle('CSRNewsPart')/items" +
+                     "?$select=Title,IntroNews,File/ServerRelativeUrl&$expand=File";
+ 
+    // execution ajax de la requite rest
+    $.ajax({
+        type: "GET",
+        url: requestUri,
+        contentType: "application/json",
+        headers: { Accept: "application/json;odata=verbose" },
+        success: onListDataReturned,
+        error: onError
+    });
+}
+function onListDataReturned(data) {
+    $("#resultsCSRSlide").empty();
+    var odataResults = data.d.results;
+    var i = 0;
+    /*$("<h2>").html("description").appendTo("#resultsCSRSlide");*/
+    while (odataResults[i]) {
+        var resultats = "<div class=\"slider\"><div class=\"legend\"></div><div class=\"content\"><div class=\"content-txt\"><h1>"+ odataResults[i].Title+"</h1><h2>" + odataResults[i].IntroNews+"</h2></div></div><div class=\"image\"><img src=\"" + odataResults[i].File.ServerRelativeUrl+"\"></div></div>";
+        $("#resultsCSRSlide").append($("<div>").append(resultats));
+        i++;
+    }
+}
+function onError(err) {
+    $("#resultsCSRSlide").text("ERROR: " + JSON.stringify(err));
+}
+      });
+
+</script>
+<div class="slider">
+      <div class="legend"></div>
+      <div class="content">
+        <div class="content-txt">
+          <h1>Lorem ipsum dolor</h1>
+          <h2>Nam ultrices pellentesque facilisis. In semper tellus mollis nisl pulvinar vitae vulputate lorem consequat. Fusce odio tortor, pretium sit amet auctor ut, ultrices vel nibh.</h2>
+        </div>
+      </div>
+      <div class="image">
+        <img src="/sites/Rework-Intranet/_catalogs/masterpage/vermeg_intranet/images/education3_5.jpg">
+      </div>
+    </div>
+</main>
+<footer>
+  <div class="ImgFooter">
+    <div class="opaFt">
+      <section class="example" id="ex2">
+        <h1>Follow us :</h1>
+        <ul class="social">
+          <li><a href="#" aria-hidden="true" class="icon-twitter"></a></li>
+          <li><a href="#" aria-hidden="true" class="icon-facebook"></a></li>
+          <li><a href="#" aria-hidden="true" class="icon-google-plus"></a></li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/vendor/jquery.js"></script>
+<script src="https://use.fontawesome.com/ad19de5a45.js"></script>
+<script src="../js/vendor/what-input.js"></script>
+<script src="../js/vendor/foundation.js"></script>
+<script src="../js/app.js"></script>
+</body>
+</html>
+while (odataResults[i]) {
+        var resultats = "<a href=\"#\"><div class=\"DocImg\"><img src=\"/sites/Rework-Intranet/_catalogs/masterpage/vermeg_intranet/images/doc.svg\"></div><div class=\"DocPart\"><h3>"+ odataResults[i].Title+"</h3><p>" + odataResults[i].File.ServerRelativeUrl+"</p>" + odataResults[i].Description+"<cite class=\"CiteDoc\"></cite></div></a>";
+        $("#resultsDocLib").append($("<article class=\"Docs\">").append(resultats));
+        i++;
+    }

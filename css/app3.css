@@ -1,0 +1,2362 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
+@font-face {
+  font-family: 'icomoon';
+  src: url("../fonts/icomoon.eot");
+  src: url("../fonts/icomoon.eot?#iefix") format("embedded-opentype"), url("../fonts/icomoon.woff") format("woff"), url("../fonts/icomoon.ttf") format("truetype"), url("../fonts/icomoon.svg#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal; 
+}
+
+* {
+
+	/* Limiter border et padding Ã  la taille de la balise */
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html{
+	font-size: 62.5%;/*Rend la police responsive et met Ã  l'echelle 10px = 1rem*/
+
+	background-color: rgba(202,202,202,1);
+}
+
+body {
+	font-size: 1.5rem;
+	font-family: 'Roboto', sans-serif;
+	background-color: white;
+}
+
+a {
+	text-decoration: none !important;
+  color: #d83431;
+}
+
+a:visited{
+	color:initial;
+}
+
+main a:after{
+  text-decoration: none !important;
+  color: black !important;
+}
+
+h1, h2, h3 {
+	font-family: 'Open Sans', sans-serif;
+}
+
+h1{
+ font-size:3rem;
+ color: black;
+ margin-left: 2rem;
+
+}
+.border{
+	border-bottom-color: #e6e6e6;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+}
+.border h1{
+  color: black;
+}
+/*===================corps de la page========================*/
+main{
+	padding: 1.5rem;
+}
+
+h2{
+margin-top: 1.5rem;
+/*margin-left: 2rem;*/
+color: black !important;
+border-bottom-width: 2px;
+border-bottom-style: solid;
+border-bottom-color: #d83431;
+margin-bottom: 3.8rem;
+}
+h3{
+  color: #d83431;
+}
+h3:hover{
+  color: black !important;
+}
+h3:after{
+  color: black;
+}
+
+.Logo{
+ width: 47rem;
+margin: -9.3rem 35%;
+}
+nav{
+  font-size:1.4rem;
+  box-shadow: 0 6px 20px 0 
+  rgba(0,0,0,0.19), 0 8px 17px 0 
+  rgba(0,0,0,0.2);
+  margin:1rem;
+padding: 1rem 2rem;
+
+}
+nav ul{
+  font-size: 1.7rem;
+  
+}
+nav li{
+
+}
+nav a{
+  color: black;
+  font-weight: bold;
+      margin-right: 1rem;
+      width: 100%
+
+}
+.dropdown.menu > li.opens-right > .is-dropdown-submenu{
+  width: 110%;/*modif du style de menu de foundation*/
+}
+nav a:hover{
+ /* background-color: #d83431;*/
+  color: #d83431;
+}
+
+.dropdown.menu > li.is-dropdown-submenu-parent > a::after{
+	right: 1px;
+}
+.dropdown.menu .is-active > a {
+    background: transparent;
+    color: #d83431;
+}
+.dropdown.menu > li.is-dropdown-submenu-parent > a::after{
+  border-color: #d83431 transparent transparent;
+}
+/*^partie image*/
+.SemiSided{
+
+/*	width: 49%;
+	display: inline-block;*/
+
+}
+
+.SemiSided  div img{
+
+}
+/*======================dynamic News===================*/
+.dynamicNews{
+ margin-bottom: 3rem;
+ margin-left: 38%;
+ font-size: 1.7rem;
+}
+/*clearfix*/
+.clearfix{
+  zoom:1;
+}
+.clearfix:after{
+  content:'.';
+  display:block;
+  clear:both;
+  visibility:hidden;
+  height:0;
+  font-size:0;
+}
+
+/*newsticker*/
+.sticker{
+    border: 2px solid white;
+    padding: 0 0.8rem;
+    padding-top: 0.6rem;
+    display: inline-block;
+    width: 7rem;
+    position: relative;
+
+}
+.newsticker{
+/*  background:#e58e8a;*/
+  border-radius:5px;
+  color:#402726;cursor:default;
+  font-weight:bold;
+  overflow:hidden;
+  padding:0.7rem 1rem 0 1rem;
+  width:60rem;
+  height: 3.5rem;
+  display: inline-block;
+  margin-bottom: -1rem;
+}
+.triangle{
+
+ display : inline-block;
+ height : 0;
+ width : 0;
+ border-top: 0.8rem solid transparent;
+ border-bottom: 0.8rem solid transparent;
+ border-left: 1.5rem solid #d83431;
+ position: absolute;
+ top: 29%;
+ left: 100%;
+}
+
+.newsticker:hover{
+ /* background:#ff9e9a;*/
+/* border: 2px solid black;*/
+}
+.newsticker ul li{
+  width:60rem;
+  height:3rem;
+  overflow:hidden;
+  white-space:nowrap;
+  display:none;
+}
+/*================hover & images=======================*/
+.ImageHover {
+ position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: 15rem;
+  
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+ background-color: rgba(0, 0, 0, .5);
+
+  /*overflow: hidden;*/
+  width: 100%;
+  height: 3.9rem;
+  transition: .5s ease;
+}
+
+.ImageHover:hover .overlay {
+  height: 100%;
+}
+
+.text {
+  white-space: nowrap; 
+  color: white;
+  font-size: 1.7rem;
+  position: absolute;
+  overflow: hidden;
+      top: 1.5rem;
+    left: 5rem;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+
+.featured-image-block{
+    width: 49%;
+    display: inline-block;
+    }
+    .featured-image-block-grid-header{
+          margin: 0 -0.5rem;
+    }
+
+    .firstImg{
+margin-bottom: 0.4rem;
+background: url(../images/education3_5.jpg);
+-webkit-background-size: cover; /* pour anciens Chrome et Safari */
+  background-size: cover; /* version standardisÃ©e */
+  background-position: center;
+  height: 16rem;
+    }
+  .firstImg img{
+      
+    height: 16rem;
+  }
+
+  .fistImg .text{
+   left: 5.6rem;
+  }
+
+    #Img1{
+background: url(../images/bg_link.jpg);
+-webkit-background-size: cover; /* pour anciens Chrome et Safari */
+  background-size: cover; /* version standardisÃ©e */
+  background-position: center;
+  height: 16rem;
+    }
+#Img1 .text{
+ left: 7.6rem;
+}
+    #Img2{
+background: url(../images/O734SZ0-min.jpg);
+-webkit-background-size: cover; /* pour anciens Chrome et Safari */
+  background-size: cover; /* version standardisÃ©e */
+  background-position: center;
+  height: 16rem;
+    }
+    #Img2 .text{
+  left: 2.3rem;
+}
+    #Img3{
+      background: url(../images/Services.jpg);
+-webkit-background-size: cover; /* pour anciens Chrome et Safari */
+  background-size: cover; /* version standardisÃ©e */
+  background-position: center;
+  height: 16rem;
+    }
+    #Img3 .text{
+  left: 5.7rem;
+}
+
+    #Img4{
+background: url(../images/O5MCDL0-min.jpg);
+-webkit-background-size: cover; /* pour anciens Chrome et Safari */
+  background-size: cover; /* version standardisÃ©e */
+  background-position: center;
+  height: 16rem;
+    }
+#Img4 .text{
+  
+}
+    /*================animation button carrÃ© Home page===============*/
+
+.ButtonAnim{
+  display: inline-block;
+  width: 31.6%;
+  margin: -2rem 0rem;
+  max-width:11rem;
+  margin-right: 1%;
+  margin-bottom: 7%; 
+  }
+.cube {
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  height: 10rem;
+
+
+  -webkit-transition: -webkit-transform .33s;
+  transition: transform .33s; /* Animate the transform properties */
+
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d; /* <-NB */
+
+}
+
+/* ===============The two faces of the cube============= */
+.flippety,.flop {
+  background: #d83431;
+  height: 10rem;
+}
+
+/* =========Position the faces=========== */
+.flippety {
+  -webkit-transform: translateZ(50px);
+  transform: translateZ(50px);
+  padding: 1.8rem;
+
+}
+
+.flop {
+
+  -webkit-transform: rotateX(-90deg) translateZ(-50px);
+  transform: rotateX(-90deg) translateZ(-50px);
+text-align: center;
+color: white;
+/*padding-top: 10%;*/
+position: relative;
+}
+.flop p{
+display: block;
+}
+
+/* ======Rotate the cube========== */
+.cube:hover {
+
+  -webkit-transform: rotateX(90deg);
+  transform: rotateX(90deg);
+
+}
+
+.BtnTool{
+  padding-top: 2rem;
+ 
+
+}
+.BtnTool img{
+  max-width: 100%;
+}
+/*=========================RSE Part==================================*/
+.ImgRse{
+ background-image: url("../images/RSE.jpg");
+ width: 100%;
+ height: 15rem;
+ -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+  background-size: cover; /* version standardisÃ©e */
+  background-position: center;
+}
+.opacBtn{
+ background-color: rgba(0, 0, 0, 0.5);
+ width: 100%;
+ height: 100%;
+
+}
+.leaf{
+    width: 8%;
+    margin-left: 45%;
+    margin-top: 4%;
+    margin-bottom: 0.2rem;
+}
+.opacBtn p{
+  color: white;
+  margin-left: 45%;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+.opacBtn a{
+color: white;
+padding: 0.7rem 1rem;
+border: 2px solid white;
+margin-left: 35%;
+}
+.opacBtn a:hover{
+  background-color: white;
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+}
+
+/*=========================departerment==============================*/
+.firstpart{
+  margin-bottom: 5rem;
+}
+/*===================partie scroll=====================*/
+.scrollstyle{
+  overflow:scroll; 
+ /* border:#000000 1px solid;*/
+  width: 100%;
+  height: 49rem;
+  overflow-x: hidden;
+  box-shadow: 0 3px 4px 0 rgba(0,0,0,0.19), 0 8px 17px 0 rgba(0,0,0,0.2);
+}
+.scrollstyle::-webkit-scrollbar{
+       background: white;
+    width: 7px;
+    position: absolute;
+    top: 0px;
+    opacity: 0.4;
+    display: block;
+    border-radius: 7px;
+    z-index: 99;
+    right: 1px;
+ 
+}
+.scrollstyle::-webkit-scrollbar-thumb{
+    background-color: rgba(0, 0, 0, .5);
+  border-radius: 7px;
+
+}
+/*============================section departure design============================*/
+
+.scrollstyle  article{
+padding: 1rem;
+border-bottom-color: #e6e6e6;
+border-bottom-width: 2px;
+border-bottom-style: solid;
+}
+.scrollstyle h3{
+
+}
+.scrollstyle img{
+  max-width: 100%
+}
+.scrollstyle p{
+color: #686868;
+}
+/*=================================app news part=========================================*/
+
+.newsPart{
+
+  background-color: #f3f7f8;
+     margin-bottom: 5rem;
+}
+.tabset > input[type="radio"] {
+  position: absolute;
+  left: -200vw;
+}
+
+.tabset .tab-panel {
+  display: none;
+}
+
+.tabset > input:first-child:checked ~ .tab-panels > .tab-panel:first-child,
+.tabset > input:nth-child(3):checked ~ .tab-panels > .tab-panel:nth-child(2),
+.tabset > input:nth-child(5):checked ~ .tab-panels > .tab-panel:nth-child(3),
+.tabset > input:nth-child(7):checked ~ .tab-panels > .tab-panel:nth-child(4),
+.tabset > input:nth-child(9):checked ~ .tab-panels > .tab-panel:nth-child(5),
+.tabset > input:nth-child(11):checked ~ .tab-panels > .tab-panel:nth-child(6) {
+  display: block;
+}
+
+/*
+ Styling
+*/
+
+
+.tabset > label {
+  position: relative;
+  display: inline-block;
+  padding: 15px 15px 25px;
+  border: 1px solid transparent;
+  border-bottom: 0;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.tabset > label::after {
+  content: "";
+  position: absolute;
+  left: 15px;
+  bottom: 10px;
+  width: 22px;
+  height: 4px;
+  background: #8d8d8d;
+}
+
+.tabset > label:hover,
+.tabset > input:focus + label {
+  color: #d83431;
+}
+
+.tabset > label:hover::after,
+.tabset > input:focus + label::after,
+.tabset > input:checked + label::after {
+  background: #d83431;
+}
+
+.tabset > input:checked + label {
+  border-color: #ccc;
+  border-bottom: 1px solid #fff;
+  margin-bottom: -1px;
+}
+
+.tab-panel {
+
+  border-top: 1px solid #ccc;
+   overflow:scroll;
+  height: 30rem;
+  overflow-x: hidden;
+  margin: 0;
+
+}
+
+.tab-panel::-webkit-scrollbar{
+    background-color: #f3f7f8;
+    width: 7px;
+    position: absolute;
+    top: 0px;
+    opacity: 0.4;
+    display: block;
+    border-radius: 7px;
+    z-index: 99;
+    right: 1px;
+ 
+}
+.tab-panel::-webkit-scrollbar-thumb{
+    background-color: rgba(0, 0, 0, .5);
+  border-radius: 7px;
+
+} 
+.tab-panel article{
+padding: 0rem;
+border-bottom-color: #e6e6e6;
+border-bottom-width: 2px;
+border-bottom-style: solid;
+height: 9rem;
+position: relative;
+
+}
+
+.tab-panel article a{
+  width: 100%;
+  height: 100%;
+  
+}
+.articleimg{
+  height: 100%;
+  width: 11%;
+  display: table-cell;
+
+}
+.articleimg h3{
+  font-size: 1.5rem;
+text-align: center;
+
+}
+
+.contentpart{
+  width: 62%;
+  display: table-cell;
+  height: 100%
+  max-height:100%;
+  padding-top: 1rem;
+}
+.contentpart h3{
+  font-size: 1.5rem;
+}
+.contentpart p{
+color:black;
+font-size: 1rem;
+}
+
+/*===============================DocPart===================================*/
+.Doc{
+   border-bottom-color: #e6e6e6;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    height: 8rem;
+    max-width: 36rem;
+
+}
+#Docsec{
+  height: 35rem;
+}
+.DocImg{
+   height: 100%;
+   width: 18%;
+   display: inline-block;
+   margin-right: 1rem;
+}
+.DocImg img{
+  padding-bottom: 13%;
+}
+.DocPart{
+  width: 76%;
+  display: inline-block;
+  height: 100%
+  max-height:100%;
+}
+.DocPart h3{
+  vertical-align: top;
+  font-size: 1.3rem;
+}
+.DocPart p{
+  font-size:1rem;
+  color: black;
+  margin-bottom: 0;
+}
+.CiteDoc{
+display: block;
+}
+/*=======================footer part=============================*/
+footer{
+/*  height: 10rem;*/
+}
+.ImgFooter{
+  background-image: url("../images/footer.PNG");
+ width: 100%;
+ height: 16rem;
+ -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+  background-size: cover; /* version standardisÃ©e */
+  background-position: center;
+  
+}
+.opaFt{
+  background-color: rgba(0, 0, 0, .7);
+  width: 100%;
+  height: 100%;
+}
+/*=============================social foot ========================*/
+
+
+.icon-dribbble:before, .icon-twitter:before, .icon-facebook:before, .icon-pinterest:before,
+.icon-flickr:before, .icon-google-plus:before, .icon-tumblr:before, .icon-github:before,
+.icon-dribbble:after, .icon-twitter:after, .icon-facebook:after, .icon-pinterest:after,
+.icon-flickr:after, .icon-google-plus:after, .icon-tumblr:after, .icon-github:after {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased; 
+}
+
+.icon-twitter:before, .icon-twitter:after {
+  content: "\e00b"; 
+}
+
+.icon-facebook:before, .icon-facebook:after {
+  content: "\e007"; 
+}
+
+
+.icon-google-plus:before, .icon-google-plus:after {
+  content: "\e003"; 
+}
+
+footer h1 {
+  text-align: center;
+  font-family: "Unica One";
+  font-size: 2em;
+  margin-bottom: 1em;
+  text-shadow: 0 1px 1px white;
+  color: white; }
+
+ul.social {
+  text-align: center; 
+}
+  ul.social li {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    line-height: 60px;
+  /*  background: white;*/
+  /*  border: 2px solid white;*/
+    border-radius: 100%;
+    margin-bottom:.5em;
+    -webkit-transition-duration: 0.7s;
+    -moz-transition-duration: 0.7s;
+    -o-transition-duration: 0.7s;
+    transition-duration: 0.7s; 
+  }
+    ul.social li:hover {
+      background: #d83431;
+      box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.3);
+       }
+      ul.social li:hover a {
+        top: -60px; 
+      }
+    ul.social li a {
+      display: block;
+      width: 100%;
+      height: 200%;
+      position: relative;
+      top: 0;
+      color: #d83431;
+      -webkit-transition: top 0.7s;
+      -moz-transition: top 0.7s;
+      -o-transition: top 0.7s;
+      transition: top 0.7s; 
+    }
+      ul.social li a:after {
+        text-align: center;
+        position: absolute;
+        width: inherit;
+        height: 50%;
+        left: 0;
+        bottom: 0;
+        line-height: 60px;
+        color: white; 
+      }
+/*===============================================partie RH==================================================*/
+
+/*======================================IMG part==========================================================*/
+.RHfirstpart{
+color: white;
+text-align: center;
+ margin-bottom: 2rem;
+}
+
+.RHfirstpart p{
+  width: 100%;
+  position: absolute; 
+  font-size: 2.7rem;
+  margin-top:18%;
+}
+
+.rhimgMid{
+background: url(../images/education1_6.jpg);
+-webkit-background-size: cover; /* pour anciens Chrome et Safari */
+  background-size: cover; /* version standardisÃ©e */
+  background-position: center;
+  height: 30rem;
+width: 49.9%;
+display: inline-block;
+}
+
+.rhimgMid div{
+  width: 100%;
+height: 100%;
+background-color:rgba(54, 169, 224, 0.7);
+/*opacity: 0.7;*/
+position: relative;
+}
+
+.rhimgMid div p{
+  position: absolute;
+}
+
+.rhFourimg{
+width: 49.85%;
+display: inline-block;
+height: 30rem;
+margin-left: -7px;
+}
+
+.rhFourimg img{
+width: 100%;
+position: absolute;
+
+}
+
+.rhFourimg p{
+  font-size: 2rem;
+  margin-top: 6%;
+
+}
+
+.rhFourimg a{
+  position: absolute;
+
+  color: white;
+  text-decoration: none;
+  width: 5rem;
+  margin-top: 18%;
+  left: 36%;
+
+  -moz-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.rhFourimg a:hover{
+  -moz-transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+}
+.rhImgDiv{
+  width: 100%;
+  height: 15rem;
+}
+
+.rhImgDiv2{
+    width: 100%;
+    height: 15rem;
+}
+
+.rhImg1{
+background: url(../images/services.jpg);
+-webkit-background-size: cover; /* pour anciens Chrome et Safari */
+  background-size: cover; /* version standardisÃ©e */
+  background-position: center;
+  height: 100%;
+  width: 49.7%;
+display: inline-block;
+}
+
+.rhImg2{
+background: url(../images/support-min-3.jpg);
+-webkit-background-size: cover; /* pour anciens Chrome et Safari */
+  background-size: cover; /* version standardisÃ©e */
+  background-position: center;
+  height: 100%;
+  width: 49.7%;
+display: inline-block;
+    margin-left: -4px;
+}
+
+.rhImg3{
+background: url(../images/technology3_12.jpg);
+-webkit-background-size: cover; /* pour anciens Chrome et Safari */
+  background-size: cover; /* version standardisÃ©e */
+  background-position: center;
+  height: 100%;
+  width: 49.7%;
+display: inline-block;
+}
+.rhImg3 div{
+
+}
+.rhImg4{
+background: url(../images/O734SZ0-min.jpg);
+-webkit-background-size: cover; /* pour anciens Chrome et Safari */
+  background-size: cover; /* version standardisÃ©e */
+  background-position: center;
+  height: 100%;
+  width: 49.7%;
+  display: inline-block;
+  margin-left: -4px;
+}
+
+.rhImg1 div{
+width: 100%;
+height: 100%;
+background-color:rgba(216, 52, 49,0.6);
+position: relative;
+
+}
+.rhImg2 div{
+width: 100%;
+height: 100%;
+background-color:rgba(241, 196, 15,0.6);
+position: relative;
+}
+.rhImg3 div{
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, .5);
+position: relative;
+color: white;
+}
+.rhImg4 div{
+width: 100%;
+height: 100%;
+background-color:rgba(46, 204, 113,0.6);
+position: relative;
+}
+.BtnRH{
+  color: white;
+padding: 0.3rem 4rem !important;
+border: 2px solid white;
+font-size: 1.4rem;
+text-indent: -2.8rem;
+margin-top: 21% !important;
+}
+
+.BtnRH:hover{
+  background-color: white;
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+}
+/*=========================Nav RH Part====================*/
+.Rhcoponement{
+margin-bottom: 3rem;
+}
+.Rhcoponement article{
+      display: table-cell;
+
+}
+.Rhcoponement h4{
+  color: white;
+  font-size: 2rem;
+margin-left: 1rem;
+margin-top: 1rem;
+margin-bottom: 2rem;
+}
+
+.Rhcoponement img{
+  max-width: 100%;
+  width: 1.1rem;
+}
+.Rhcoponement a:hover{
+  color: black !important;
+}
+.RHNav{
+  height: 40rem;
+  width: 24.7%;
+  background-color:rgb(54, 169, 224);
+}
+.RHBtnCop{
+  width: 49.7%;
+}
+#GreyPart{
+  background-color: #bdc3c7;
+}
+
+/*===accordeon css====*/
+.multilevel-accordion-menu{
+      margin-left: 2.5rem;
+      font-size: 1.3rem;
+}
+
+.multilevel-accordion-menu .is-accordion-submenu-parent a {
+  color: white;
+/*  background: #4d5158;*/
+}
+
+.multilevel-accordion-menu .is-accordion-submenu a {
+/*  background: #35383d;*/
+}
+
+.multilevel-accordion-menu .sublevel-1 {
+  text-indent: 1rem;
+}
+
+.multilevel-accordion-menu .sublevel-2 {
+  text-indent: 2rem;
+}
+
+.multilevel-accordion-menu .sublevel-3 {
+  text-indent: 3rem;
+}
+
+.multilevel-accordion-menu .sublevel-4 {
+  text-indent: 4rem;
+}
+
+.multilevel-accordion-menu .sublevel-5 {
+  text-indent: 5rem;
+}
+
+.multilevel-accordion-menu .sublevel-6 {
+  text-indent: 6rem;
+}
+
+.multilevel-accordion-menu a {
+/*  color: #fefefe;
+  box-shadow: inset 0 -1px #41444a;*/
+}
+
+.multilevel-accordion-menu a:Hover {
+  /*border-color: #fefefe transparent transparent;*/
+  color: #d83431;
+}
+
+.multilevel-accordion-menu .menu > li:not(.menu-text) > a {
+  padding: 1.2rem 1rem;
+}
+
+.multilevel-accordion-menu .is-accordion-submenu-parent[aria-expanded="true"] a.subitem::before {
+  /*content: "\f016";*/
+  
+  margin-right: 1rem;
+}
+
+.multilevel-accordion-menu .is-accordion-submenu-parent[aria-expanded="true"] a::before {
+/*  content: "\f07c";*/
+  
+  margin-right: 1rem;
+}
+
+.multilevel-accordion-menu .is-accordion-submenu-parent[aria-expanded="false"] a::before {
+/*  content: "\f07b";*/
+  
+  margin-right: 1rem;
+}
+
+/*===========================middle HR page Button section========================*/
+
+.RHBtnCop{
+  padding: 2rem;
+}
+.RHBtnCop h2{
+  color: black;
+      margin-bottom: 5.8rem;
+
+}
+ .RHBtnCop button:hover{cursor: pointer}
+  .RHBtnCop button {
+      background: #d83431; outline: none;
+      position: relative;
+      /*adding: 2rem 5rem;*/
+      overflow: hidden;
+      color: white;
+      margin-bottom: 1rem;
+      width: 32%;
+      height: 10rem;
+    }
+
+    /*button:before (attr data-hover)*/
+  .RHBtnCop  button:hover:before{opacity: 1; transform: translate(0,0);}
+    button:before{
+      content: attr(data-hover);
+      position: absolute;
+      top: 1.1em; left: 0;
+      width: 100%;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-weight: 800;
+      font-size: .8em;
+      opacity: 0;
+      transform: translate(-100%,0);
+      transition: all .3s ease-in-out;
+    }
+      /*button div (button text before hover)*/
+     .RHBtnCop button:hover div{opacity: 0; transform: translate(100%,0)}
+     .RHBtnCop button div{
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        font-weight: 800;
+        font-size: .8em;
+        transition: all .3s ease-in-out;
+      }
+
+
+/*=============================section paralax RH ============================*/
+.para{
+  height: 30rem;
+  margin-bottom: 3rem;
+
+}
+.para h4{
+  color: white;
+  font-size: 3rem;
+/*  font-style: bold;*/
+  text-align: center;
+padding-top: 4rem;
+margin-bottom: 3rem;
+}
+#parallax{
+background: url(../images/education.JPG);
+
+    /* Full height */
+    height: 100%; 
+
+    width: 100%;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+.opacRH{
+  background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.textContain{
+  color: white;
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+/*================BtN Vermeg Academy style==================*/
+
+/*   
+    Spot is the span on the inside of the href that
+    fills the parent and makes the hover and link work
+    for the entire div
+*/
+
+.spot {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+/*
+    This is the outer svg wrapper that the SVG itself will 
+    fill. Multiple svg-wrapper classes can be put side by side.
+*/
+
+.svg-wrapper {
+  margin-top: 0;
+  position: relative;
+  width: 150px;
+  /*make sure to use same height/width as in the html*/
+  height: 40px;
+  display: inline-block;
+  border-radius: 3px;
+  margin-left: 45.4%;
+  margin-right: 5px
+}
+/*
+  This is where we define the fill, color, thickness,
+  and stroke pattern of the SVG when there is no hover.
+  The dasharray and offset together define the line position
+  under the words. Here's also where the transition speed is set.
+*/
+
+#shape {
+  stroke-width: 6px;
+  fill: transparent;
+  stroke: white;
+  stroke-dasharray: 85 400;
+  stroke-dashoffset: -220;
+  transition: 1s all ease;
+}
+/* 
+    Pushing the text up into the SVG. Without this the
+    text would be below the div's.
+*/
+
+#text {
+  margin-top: -35px;
+  text-align: center;
+}
+
+#text a {
+  color: white;
+  text-decoration: none;
+  font-weight: 100;
+  font-size: 1.1em;
+}
+/* 
+    Changing the shape on hover. I change the color of the stroke,
+make it thinner, then set it to again wrap around the entire parent element.
+*/
+
+.svg-wrapper:hover #shape {
+  stroke-dasharray: 50 0;
+  stroke-width: 3px;
+  stroke-dashoffset: 0;
+  stroke: #d83431;
+}
+/*=============================section HR Third====================*/
+.hrThird{
+color: white;
+position: relative;
+height: 55rem;
+margin-bottom: 2.5rem;
+
+}
+.hrThird .opacRH{
+  padding: 2rem;
+}
+.hrThird h4{
+  font-size: 2.95rem;
+  margin-left: 1rem;
+
+}
+.hrThird article{
+  display: inline-block;
+  width: 33.2%;
+  height: 100%;
+
+}
+.hrThird h4 i{
+  margin-right: 0.5rem;
+}
+.HRp{
+  margin-left: 1.5rem;
+}
+
+#HRLib{
+background: url(../images/RSE.jpg);
+-webkit-background-size: cover; /* pour anciens Chrome et Safari */
+  background-size: cover; /* version standardisÃ©e */
+  background-position: center;
+  position: absolute;
+  text-align: center;
+}
+#HRLib p strong{
+  color: #d83431;
+}
+#HRLib p:last-of-type{
+
+  margin-bottom: 2rem;
+}
+#HRLib a{
+    background-color: white;
+    padding: 1rem 1.5rem;
+    color: rgba(0,0,0,0.5);
+    font-weight: bold;
+}
+#HRTeach{
+background-color: #d83431;
+left: 33.2%;
+  position: absolute;
+  padding: 2rem;
+}
+.HRDocs{
+  background: url(../images/education1_8.jpg);
+-webkit-background-size: cover; /* pour anciens Chrome et Safari */
+  background-size: cover; /* version standardisÃ©e */
+  background-position: center;
+  left: 66.4%;
+    position: absolute;
+}
+
+
+.HRscroll{
+  width: 100%;
+  overflow:scroll; 
+ /* border:#000000 1px solid;*/
+  width: 100%;
+  height: 44rem;
+  overflow-x: hidden;
+  position: relative;
+  border-top: solid 1px white;
+  margin-bottom: 0.5rem;
+}
+
+.HRscroll::-webkit-scrollbar{
+    background-color: rgba(0, 0, 0, .1);
+    width: 7px;
+    position: absolute;
+    top: 0px;
+    opacity: 0.4;
+    display: block;
+    border-radius: 7px;
+    z-index: 99;
+    right: 1px;
+ 
+}
+.HRscroll::-webkit-scrollbar-thumb{
+    background-color: rgba(0, 0, 0, .5);
+  border-radius: 7px;
+
+}
+
+.HRscroll  article{
+padding: 1rem;
+border-bottom-color: #e6e6e6;
+border-bottom-width: 1px;
+border-bottom-style: solid;
+width: 100%;
+height: 8rem;
+color: white;
+}
+ .HRscroll h3{
+
+}
+ .HRscroll img{
+  max-width: 100%;
+width: 80%;
+  display: inline-block;
+}
+.HRscroll p{
+color: #686868;
+}
+ .HRart{
+  height: 5rem;
+  position: relative;
+}
+
+.HRartImg{
+ display: inline-block;
+ position: absolute;
+  border: solid 1px white;
+  width: 10.55%;
+  height: 65%;
+  margin-left: 1rem;
+
+}
+
+.HRartImg:hover{
+  color: #d83431;
+   border: solid 1px #d83431;
+}
+
+.HRartImg i{
+    font-size: 3rem;
+    margin-left: 0.95rem;
+    color: white;
+    margin-top: 0.9rem;
+    margin-left: 1rem;
+}
+.HRartImg i:hover{
+  color: #d83431;
+
+}
+
+
+.HRartText{
+    display: inline-block;
+    width: 78%;
+    top: 0;
+    position: absolute;
+    margin-left: 20%;
+    padding-top: 0.5rem;
+}
+.HRartText h3{
+  font-size: 1.5rem;
+  color: white;
+}
+.HRartText h3:hover{
+  color: #d83431 !important;
+  font-weight: bold !important;
+}
+.HRartText p{
+  color: white;
+  font-size: 1rem;
+}
+
+.HRartText cite{
+  color: white;
+}
+.firstpart{
+  margin-bottom: 5rem;
+}
+/*===================partie scroll=====================*/
+/*=====================HR OUR EXPERT PART===============================*/
+#HRTeach .HRartImg{
+  border: none;
+margin-left: 0;
+  width: 14%;
+}
+#HRTeach  article{
+
+}
+
+
+#HRTeach .HRartImg img{
+  width: 100%;
+}
+.roundedImage{
+    overflow:hidden;
+    -webkit-border-radius:50px;
+    -moz-border-radius:50px;
+    border-radius:50px;
+    height: 121%;
+    max-width: 6.4rem;
+}
+
+/*======================RH partie a definir =====================*/
+/*============================================END OF HR PART=================================================*/
+/*========================================PART TROMBI================================================*/
+.Trombi{
+
+height: 100rem;
+position: relative;
+}
+.Trombi h1{
+  color: white;
+  font-size: 5rem;
+}
+.Trombi h2{
+  margin: 0;
+  margin-bottom: 0.8rem;
+}
+.TrombiContant{
+  position: absolute;
+  color: white;
+  text-align: center;
+  top: 9%;
+  width: 50%;
+  left: 25%;
+}
+.TrombiContant p{
+  margin-bottom: 1.5rem;
+}
+.TrombiContant p strong{
+  font-size: 2.5rem;
+}
+.TrombiContant a{
+  padding: 2rem 3rem;
+  background-color: white;
+  padding: 1rem 1.5rem;
+  color:rgba(0,0,0,0.5);
+  font-weight: bold;
+}
+.TrombiContant a:hover{
+   -moz-transform: scale(1.2);
+   -webkit-transform: scale(1.2);
+   transform: scale(1.2);
+}
+.Trombi video{
+  position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+}
+.Trombi nav{
+  box-shadow: none;
+}
+/*==================================flip card=================================*/
+#f1_container {
+  position: relative;
+  margin: 10px auto;
+  width: 15rem;
+  height: 15rem;
+  z-index: 1;
+}
+#f1_container {
+  perspective: 1000;
+}
+#f1_container p{
+  font-size: 1.3rem;
+}
+#f1_container p strong{
+  font-size: 1.6rem;
+}
+#f1_card {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 0.3s linear;
+}
+#f1_card img{
+  width: 15rem;
+}
+#f1_container:hover #f1_card {
+  transform: rotateY(180deg);
+  box-shadow: -5px 5px 5px #aaa;
+}
+.face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+.face.back {
+  display: block;
+  transform: rotateY(180deg);
+  box-sizing: border-box;
+  padding: 10px;
+  color: black;
+  /*text-align: center;
+*/  background-color: white;
+}
+/*============================Slider Trombi==========================*/
+.ecommerce-product-slider .orbit-previous,
+.ecommerce-product-slider .orbit-next {
+  color: #cacaca;
+}
+
+.ecommerce-product-slider .orbit-bullets button {
+  height: 0.65rem;
+  width: 0.65rem;
+}
+.column {
+display: inline-block;
+}
+.orbit{
+  top: 46%;
+}
+.orbit-slide{
+  margin-left: 25%;
+}
+.ecommerce-product-slider .product-card {
+ /* background-color: #fefefe;
+  border: 1px solid #e6e6e6;*/
+  /*padding: 1rem;*/
+  margin-bottom: 1.5rem;
+}
+
+.ecommerce-product-slider .product-card-thumbnail {
+  display: block;
+  position: relative;
+}
+
+.ecommerce-product-slider .product-card-title {
+  font-family: 'Open sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.45rem;
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
+.ecommerce-product-slider .product-card-desc {
+  color: #8a8a8a;
+  display: block;
+  font-family: 'Open sans', sans-serif;
+  font-size: 0.85rem;
+}
+
+.ecommerce-product-slider .product-card-price {
+  color: #3e3e3e;
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-top: 0.8rem;
+}
+
+.ecommerce-product-slider .product-card-sale {
+  color: #cacaca;
+  display: inline-block;
+  font-size: 0.85rem;
+  margin-left: 0.3rem;
+  text-decoration: line-through;
+}
+
+.ecommerce-product-slider .product-card-colors {
+  display: block;
+  margin-top: 0.8rem;
+}
+
+.ecommerce-product-slider .product-card-color-option {
+  display: inline-block;
+  height: 25px;
+  width: 25px;
+}
+
+.SliderPlace{
+
+}
+
+/*==============================CE Part=================================*/
+.CEfirstpart{
+  background-image: url("../images/1.1.jpg");
+ width: 100%;
+ height: 40rem;
+ -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+  background-size: cover; /* version standardisÃ©e */
+  background-position: center;
+  padding-top: 14rem;
+  margin-bottom: 3rem;
+}
+
+.CEfirstpart article{
+background-color: rgba(0,0,0,0.5);
+color: white;
+text-align: center;
+padding:2rem;
+}
+
+.CEfirstpart article p:first-of-type{
+   font-size: 2.7rem;
+}
+.CESecpart{
+  width: 100%;
+  position: relative;
+  height: 33rem;
+}
+.CESecpart article{
+ height: 27rem;
+  display: inline-block;
+  margin-bottom: 3rem;
+  position: absolute;
+}
+.Club{
+background-image: url("../images/paper.jpg");
+ width: 100%;
+ -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+  background-size: cover; /* version standardisÃ©e */
+  background-position: center;
+  padding-top: 26.2rem;
+  width: 25%;
+  left: 0;
+  bottom: 0;
+}
+/*===============================.club bTn==================================*/
+.Club a{
+
+}
+
+
+.basicBox, .swiggleBox, .checkBox {
+  width: 160px;
+  height: 55px;
+  margin:auto;
+  color: white;/*#42  74D3*/
+
+  font-size: 1.5rem;
+  line-height: 50px;
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+  bottom: 11rem;
+}
+
+.Club svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.Club svg rect,.Club svg path,.Club svg polyline {
+  fill: none;
+  stroke: white;
+  stroke-width: 1;
+}
+
+.basicBox:hover svg rect, .swiggleBox:hover svg path, .checkBox:hover svg polyline {
+  stroke: white;
+}
+
+/* Basic Box */
+.Club svg rect {
+  stroke-dasharray: 400, 0;
+  -webkit-transition: all 0.8s ease-in-out;
+  -moz-transition: all 0.8s ease-in-out;
+  -ms-transition: all 0.8s ease-in-out;
+  -o-transition: all 0.8s ease-in-out;
+}
+.basicBox:hover svg rect {
+  stroke-width: 3;
+  stroke-dasharray: 35, 245;
+  stroke-dashoffset: 38;
+  -webkit-transition: all 0.8s ease-in-out;
+  -moz-transition: all 0.8s ease-in-out;
+  -ms-transition: all 0.8s ease-in-out;
+  -o-transition: all 0.8s ease-in-out;
+}
+/*==================================CE center nav============================*/
+.CENav{
+width: 49%;
+left: 25.5%;
+
+}
+.CENav img{
+  max-width: 100%;
+}
+.CEEvent{
+background-image: url("../images/1.4.jpg");
+ width: 100%;
+ -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+  background-size: cover; /* version standardisÃ©e */
+  background-position: center;
+  padding-top: 27rem;
+  width: 25%;
+  right: 0;
+  bottom: 0;
+
+}
+/*=================================CE event BTN==========================*/
+.CEEvent .spot {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+/*
+    This is the outer svg wrapper that the SVG itself will 
+    fill. Multiple svg-wrapper classes can be put side by side.
+*/
+
+.CEEvent .svg-wrapper {
+  margin-top: 0;
+  position: relative;
+  width: 150px;
+  /*make sure to use same height/width as in the html*/
+  height: 40px;
+  display: inline-block;
+  border-radius: 3px;
+  margin-left: 32%;
+  bottom: 1.8rem;
+}
+/*
+  This is where we define the fill, color, thickness,
+  and stroke pattern of the SVG when there is no hover.
+  The dasharray and offset together define the line position
+  under the words. Here's also where the transition speed is set.
+*/
+
+.CEEvent #shape2 {
+  stroke-width: 6px;
+  fill: transparent;
+  stroke: #009FFD;
+  stroke-dasharray: 85 400;
+  stroke-dashoffset: -220;
+  transition: 1s all ease;
+}
+/* 
+    Pushing the text up into the SVG. Without this the
+    text would be below the div's.
+*/
+
+ .CEEvent #text2 {
+  
+  text-align: center;
+}
+
+.CEEvent #text2 a {
+  color: #009FFD;
+  text-decoration: none;
+  font-weight: 100;
+  font-size: 1.1em;
+}
+/* 
+    Changing the shape on hover. I change the color of the stroke,
+make it thinner, then set it to again wrap around the entire parent element.
+*/
+
+.CEEvent .svg-wrapper:hover #shape2 {
+  stroke-dasharray: 50 0;
+  stroke-width: 3px;
+  stroke-dashoffset: 0;
+  stroke: #06D6A0;
+}
+/*=======================CEteamlink part================*/
+.CETeamLink{
+  background-image: url("../images/1.13.jpg");
+ -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+  background-size: cover; /* version standardisÃ©e */
+  background-position: center;
+  height: 40rem;
+  text-align: center;
+  width: 100%
+
+}
+
+.CETeamLink .opacBtn p{
+  margin-left: 0;
+  padding: 0 20%;
+}
+.CETeamLink .opacBtn p:first-of-type{
+  font-size: 2.7rem;
+  padding-top: 5rem;
+}
+
+.CETeamLink .opacBtn p:last-of-type{
+  margin-bottom: 4rem;
+}
+.OpacPart{
+  width: 100%;
+  height:100%;
+  color: white;
+  position: relative;
+}
+.OpacPart img{
+  position: absolute;
+    width: 18%;
+    left: 40%;
+    top: 19%;
+}
+
+.OpacPart p{
+  padding-top: 28%;
+  font-size: 2rem;
+}
+.OpacPart p:hover{
+
+}
+.OpacPart a{
+  color: white;
+}
+.OpacPart img:hover{
+  -webkit-transition: all 200ms ease-in;
+    -webkit-transform: scale(1.3);
+    -ms-transition: all 200ms ease-in;
+    -ms-transform: scale(1.3);   
+    -moz-transition: all 200ms ease-in;
+    -moz-transform: scale(1.3);
+    transition: all 200ms ease-in;
+    transform: scale(1.3);
+}
+.sondage{
+width: 32%;
+margin-top: 3.2rem;
+display: inline-block;
+background-image: url("../images/survey.jpg");
+-webkit-background-size: cover; /* pour anciens Chrome et Safari */
+background-size: cover; /* version standardisÃ©e */
+background-position: center;
+height: 10.5rem;
+margin-right: 1rem;
+text-align: center;
+margin-bottom: 1.5rem;
+}
+.sondage .OpacPart{
+background-color: rgba(52, 152, 219, 0.7);
+}
+.CEAgenda{
+margin-top: 3.2rem;
+width: 32%;
+display: inline-block;
+background-image: url("../images/agenda.jpg");
+-webkit-background-size: cover; /* pour anciens Chrome et Safari */
+background-size: cover; /* version standardisÃ©e */
+background-position: center;
+height: 10.5rem;
+margin-right: 1rem;
+margin-bottom: 1.5rem;
+text-align: center;
+}
+.CEAgenda .OpacPart{
+background-color: rgba(231, 60, 104, 0.7);
+}
+.CEEventBtn{
+margin-top: 3.2rem;
+width: 32%;
+display: inline-block;
+background-image: url("../images/1.13.jpg");
+-webkit-background-size: cover; /* pour anciens Chrome et Safari */
+background-size: cover; /* version standardisÃ©e */
+background-position: center;
+height: 10.5rem;
+text-align: center;
+margin-bottom: 1.5rem;
+}
+.CEEventBtn .OpacPart{
+background-color: rgba(155, 89, 182, 0.7);
+}
+.CEPartnership{
+width: 100%;
+background-image: url("../images/partnership.jpg");
+-webkit-background-size: cover; /* pour anciens Chrome et Safari */
+background-size: cover; /* version standardisÃ©e */
+ background-position: top;
+ height: 15rem;
+ text-align: center;
+ bottom: 0;
+}
+
+.CEPartnership .OpacPart{
+background-color: rgba(241, 196, 15, 0.7);
+}
+.CEPartnership .OpacPart img{
+    left: 45%;
+    top: 17%;
+    width: 9%;
+}
+.CEPartnership .OpacPart p{
+    padding-top: 13%;
+}
+
+/*============================CE third part===================================*/
+.CETeamLink .opacBtn a{
+
+  margin-left: 0;
+
+}
+
+/*==============================================CSR PART=============================================*/
+/*===================================csr hero part=============================*/
+#header {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 5rem;
+}
+.header {
+  position: relative;
+  width: 100%;
+  background: #FBFBFB;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center center;
+  z-index: 1;
+}
+#large-header{
+
+}
+.header {background-image: url('https://goo.gl/Pfs4wD');}
+.header-title {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  color: #F9F1E9;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate3d(-50%,-50%,0);
+  transform: translate3d(-50%,-50%,0);
+}
+.header-title {
+  font-family: 'Clicker Script', cursive;
+  font-weight: normal;
+  font-size: 2.7em;
+  padding-left: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+.header-title::before {
+  content: '';
+  width: 25vw;
+  height: 25vw;
+  min-width: 3.5em;
+  min-height: 3.5em;
+  background-image: url('https://goo.gl/XTTGeH');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  z-index: -1;
+  -webkit-transform: translate3d(-50%,-50%,0);
+  transform: translate3d(-50%,-50%,0);
+}
+
+/*=================================header end======================================*/
+.CSRHeroPart{
+  background-image: url("../imageTest/green.jpg");
+  -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+  background-size: cover; /* version standardisÃ©e */
+  background-position: center;
+      /*background-attachment: fixed;*/
+  height:36rem;
+  position: relative;
+}
+.Proud{
+  position: absolute;
+  width: 100%;
+  height: 20%;
+  top: 60%;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  text-align: center;
+}
+.Proud p{
+  font-size: 3rem;
+  margin-top: 1rem;
+}
+#BestplaceTo{
+  position: absolute;
+  width: 10%;
+  top: 0;
+  right: 0;
+}
+.opacCSR{
+    background-color: rgba(0, 0, 0, 0);
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding-top: 5rem;
+}
+.opacCSR img{
+    width: 14%;
+    margin-left: 43%;
+    margin-top: 5%;
+}
+.opacCSR p{
+  color: white;
+  font-size: 4.5rem;
+  text-align: center;
+  
+}
+/*=========================emporeed part=======================*/
+.empowered{
+
+}
+.empowered img{
+
+}
+.empowered p{
+  width: 40%;
+  margin-left: 29%;
+}
+.empowered .Club{
+  background-image: url("../images/RSE.jpg");
+}
+.Phylosophy{
+  width: 33%;
+  margin-left: 35%;
+}
+.Opac{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+};
+.Opac h3:hover{
+
+}
+.Opac .basicBox{
+  position: absolute;
+  left: 28%;
+  top: 86%;
+}
+.empowered .CESecpart{
+      margin-top: -4.6rem;
+
+}
+.empowered .CEEvent{
+  background-image: url("../images/technology3_12.jpg");
+}
+.empowered .CEEvent a{
+  padding: 1rem 2rem;
+  background-color: white;
+  color: rgba(0,0,0,0.5);
+  margin-left: 37%;
+}
+.empowered .CEEvent a:hover{
+  transform: scale(1.5);
+}
+.empowered h3{
+  text-align: center;
+  color: white;
+   margin-top: 5rem;
+   margin-bottom: 1rem;
+}
+}
+.empowered h3 strong:hover{
+  color: white !important;
+
+}
+.empowered .CEPartnership .OpacPart{
+  background-color: rgba(46, 204, 113,0.6);
+}
+#CsrClub{
+  color: white;
+  width: 80%;
+  text-align: center;
+  margin: 0 3.5rem;
+
+}
+#CSRTeaam{
+   color: white;
+  width: 80%;
+  text-align: center;
+  margin: 0 3.5rem;
+  margin-bottom: 5rem;
+}
+/*===================CSR NEWS & Event Part=========================*/
+.CSRThirdPart{
+height: 38rem;
+}
+.CsrEvent{
+width: 49%;
+display: inline-block;
+height: 100%;
+max-height: 100%;
+padding-right: 1rem;
+}
+.CSRNews{
+width: 49%;
+display: inline-block;
+height: 100%;
+}
+/*===============slider news==================*/
+.borderLimitCSR{
+  width: 17%;
+  margin-bottom: -2.3rem;
+}
+.CsrEvent .orbit{
+  top: 0;
+}
+.CsrEvent .orbit-wrapper{
+
+}
+.CsrEvent .orbit-container{
+
+}
+.CsrEvent .orbit-container ul{
+  
+}
+.CsrEvent .orbit-slide{
+  margin: 0;
+}
+.CsrEvent .orbit-caption{
+  padding: 0;
+}
+.CsrEvent .clean-hero-slider .orbit-caption h3:hover{
+  color: white !important;
+}
+.CsrEvent .clean-hero-slider .orbit-caption {
+  width: auto;
+  height: auto;
+  background: #0a0a0a;
+  position: absolute;
+  text-align: center;
+  right: 0;
+  left: 0;
+  padding: 0.2rem 2rem;
+}
+.CsrEvent .orbit-figure{
+  height: 30rem;
+}
+.empowered .orbit-figure img{
+
+}
+@media print, screen and (min-width: 40em) {
+  .CsrEvent .clean-hero-slider .orbit-caption {
+    position: absolute;
+/*    top: 50%;*/
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    text-align: left;
+    width: 70%;
+    right: 0;
+    padding: 1rem 2rem;
+  }
+}
+
+@media screen and (min-width: 75em) {
+ .CsrEvent .clean-hero-slider .orbit-caption {
+    padding-right: 10%;
+  }
+}
+
+@media screen and (min-width: 90em) {
+  .CsrEvent.clean-hero-slider .orbit-caption {
+    padding-right: 20%;
+  }
+}
+
+.CsrEvent .clean-hero-slider .orbit-caption p {
+  font-size: 0.9rem;
+  line-height: 1.25;
+}
+
+@media print, screen and (min-width: 40em) {
+ .CsrEvent .clean-hero-slider .orbit-caption p {
+    font-size: 1.1rem;
+  }
+}
+
+.CsrEvent .clean-hero-slider .orbit-caption h3 {
+  color: #d83431;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+@media print, screen and (min-width: 40em) {
+  .CsrEvent .clean-hero-slider .orbit-caption h3 {
+    font-size: 2.5rem;
+    font-weight: normal;
+  }
+}
+
+.CsrEvent .clean-hero-slider .orbit-slide {
+  padding-bottom: 40%;
+  background: #0a0a0a;
+}
+
+@media print, screen and (min-width: 40em) {
+  .CsrEvent .clean-hero-slider .orbit-slide {
+    padding-bottom: 0;
+  }
+}
+
+.CsrEvent .clean-hero-slider .orbit-controls button {
+  background: #d83431;
+  padding: 1rem 0.5rem;
+}
+
+.CsrEvent .clean-hero-slider .orbit-controls button:hover {
+  background: #fefefe;
+  color: #0a0a0a;
+}
+
+@media print, screen and (min-width: 40em) {
+  .CsrEvent .clean-hero-slider .orbit-controls .orbit-previous {
+    left: auto;
+    right: 2.4rem;
+  }
+}
+
+@media print, screen and (min-width: 40em) {
+ .CsrEvent .clean-hero-slider .orbit-controls .orbit-next {
+    right: 0.5rem;
+  }
+}
+
+.CsrEvent .clean-hero-slider .orbit-bullets {
+  display: none;
+}
+
+@media print, screen and (min-width: 40em) {
+  .CsrEvent.clean-hero-slider .orbit-bullets {
+    display: block;
+    margin-bottom: 0;
+    margin-top: -3rem;
+    background: none;
+  }
+}
+
+.CsrEvent .clean-hero-slider .orbit-bullets button {
+  width: 3rem;
+  height: 0.4rem;
+  border-radius: 0;
+  background-color: #fefefe;
+}
+
+.CsrEvent.clean-hero-slider .orbit-bullets button.is-active {
+  background-color: #d83431;
+}
+
+.CsrEvent.clean-hero-slider ul.orbit-container {
+  height: auto !important;
+}
+
+.CsrEvent .clean-hero-slider li.orbit-slide {
+  max-height: none !important;
+}
+.button{
+  color: #d83431!important;
+  background-color: white;
+}
+.button:hover{
+  color: white !important;
+  background-color: #d83431;
+}
+
+/*===============================news CSR==============================*/
+.CSRNews .HRDocs{
+  width: 100%;
+  left: 0;
+  position: relative;
+  color: white;
+  height: 30rem;
+  background-image: url("../images/RSE.jpg");
+}
+.CSRNews .HRscroll{
+  height: 23rem;
+}
+
+#CSRSec{
+  height: 78%;
+}
+#CSRSec .Doc{
+position: relative;
+width: 100%;
+max-width: none;
+height: 9rem;
+}
+#CSRSec .DocImg{
+position: absolute;
+width: 12%;
+}
+#CSRSec .DocPart{
+position: absolute;
+margin-left: 15%;
+}
+
+
+/*====================================CE LINK ================================*/
+.CELinking{
+  height: 56rem;
+}
+.CELinking article{
+  display: inline-block;
+
+width: 28%;
+position: relative;
+}
+.OpacLink{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  position: relative;
+  height: 30rem;
+}
+
+.OpacLink img{
+  width: 45%;
+  margin-left: 27%;
+  margin-top: 10%;
+  position: absolute;
+
+  -moz-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.OpacLink img:hover{
+  transform: scale(1.3);
+}
+.OpacLink p{
+  color: white;
+  font-size: 3.5rem;
+  text-align: center;
+  padding-top: 22rem;
+}
+.svg{
+  color: white
+  background-color:white;
+}
+.Tunisia{
+  background-image: url("../images/Mausoleum.jpg");
+  -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+  background-size: cover; /* version standardisÃ©e */
+  background-position: center;
+}
+.France{
+  background-image: url("../images/tour-eiffel.jpg");
+  -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+  background-size: cover; /* version standardisÃ©e */
+  background-position: center;
+}
+
+.testlogo article{
+position: relative;
+height: 30rem;
+}
+.testlogo img{
+  position: absolute;
+  width: 20%;
+}
+.tmplog{
+
+}
+.valog{
+  
+}
+/*========================media queries=============*/
+
+
+@media all and (min-width: 1721px) and (max-width: 2560px){
+
+  .BtnTool{
+    padding-left: 10%;
+  }
+
+}
